@@ -166,32 +166,34 @@ def main():
     print("*****************************************************************************************************")
     level()
     human_level_choice = input ("Enter a level at which you want to play(1/2/3/4): ")
-    if human_level_choice.isdigit():
-        human_level_choice = int(human_level_choice)
-        while human_level_choice in range(1,5):
-            if human_level_choice == 1:
-                level_1()
-                break
+    while is_running :
+        human_level_choice = input ("Enter a level at which you want to play(1/2/3/4): ")
+        if human_level_choice.isdigit():
+            human_level_choice = int(human_level_choice)
+            if human_level_choice in range(1,5):
+                if human_level_choice == 1:
+                    level_1()
+                    is_running = False
 
-            elif human_level_choice == 2:
-                level_2()
-                break
+                elif human_level_choice == 2:
+                    level_2()
+                    is_running = False
 
-            elif human_level_choice == 3:
-                level_3()
-                break
+                elif human_level_choice == 3:
+                    level_3()
+                    is_running = False
 
-            else :
-                human_level_choice == 4 
-                level_4()
-                break
-            
-    
+                else :
+                    human_level_choice == 4 
+                    level_4()
+                    is_running = False
+                
+        
 
+            else:
+                return print ("not a valid option") 
         else:
-            return print ("not a valid option") 
-    else:
-        print("pls numerical value")
+            print("pls numerical value")
     print("*****************************************************************************************************")
     print("*****************************************************************************************************")
     print("                           THANK FOR PLAY THE NUMBER GUESSING GAME                                   ")
